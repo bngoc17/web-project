@@ -1,0 +1,116 @@
+.title {
+    position: relative;
+    margin-top: 4%;
+    margin-left: 5px;
+    width: 60%;
+    float: left;
+}
+
+.helplist {
+    position: relative;
+    float: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.help {
+    position: relative;
+    display: inline-block;
+}
+
+.smol {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 125px;
+    height: 125px;
+    max-width: 125px;
+    max-height: 125px;
+}
+
+.benefit {
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 300px;
+    max-width: 300px;
+    transition: transform .5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.support {
+    display: inline-block;
+    position: relative;
+    width: 480px;
+    height: 500px;
+    max-width: 480px;
+    max-height: 500px;
+    transition: transform .5s ease;
+}
+
+.support:hover {
+    transform: scale(1.05);
+}
+
+.big {
+    display: inline-block;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 400px;
+    height: 500px;
+    transition: transform .5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.biglist {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 300px;
+    height: 480px;
+    max-width: 300px;
+    max-height: 480px;
+    transition: transform .5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.smoltitle {
+    position: relative;
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+img {
+    border-radius: 15px;
+}
