@@ -4,5 +4,5 @@ if (isset($_POST["logout"])) {
     session_unset();
     session_destroy();
     $_SESSION = array();
-    header('location:home.php');
+    header('location:..\home.php');
 }
