@@ -1,8 +1,8 @@
 <?php
 include("test.php");
 session_start();
-$search = $_GET["search"];
-$price_search = $_GET["price_search"];
+@$search = $_GET["search"];
+@$price_search = $_GET["price_search"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +16,7 @@ $price_search = $_GET["price_search"];
     <link rel="stylesheet" href="..\css\navbar.css">
     <link rel="stylesheet" href="..\css\login.css">
     <link rel="stylesheet" href="..\css\searchlist.css">
-    <script src="..\js\login.js"></script>
-    <script src="..\js\search.js"></script>
+    <script src="..\js\popup.js"></script>
 </head>
 
 <body>
@@ -338,17 +337,31 @@ $price_search = $_GET["price_search"];
                 </div>
             </div>
         </span>
+        <span class="navbar-a">
+            <img src="https://cdn-icons-png.flaticon.com/128/3917/3917132.png" width="15px" height="15px" style="border-radius: 0%; padding-right: 10px; padding-top: 2px;" class="searchbar" onclick="search()">
+        </span>
+        <span class="navbar-a"><img src="https://cdn-icons-png.flaticon.com/128/3916/3916630.png" width="15px" height="15px" style="border-radius: 0%; padding-left: 10px; padding-top: 2px;"></span>
     </div>
-    <img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;">
+    <span class="navbar-a"><img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
+    <div id="searchbar" style="display: none;" style="left:700px;">
+        <form action="search.php" method="get">
+            <p><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></p>
+            <p><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá</button></p>
+        </form>
+    </div>
     <p>
     <form action="search.php" method="get">
-        <input type="text" size="75%" style="height: 30px; width:75%; float:left; margin-top:35px" placeholder="Search" name="search"><input type="submit" hidden /> <br>
-        <input type="text" size="50%" style="height: 30px; width:50%; float:left; margin-top:35px" placeholder="Price Search" name="price_search"><input type="submit" hidden /> <br> <br> <br>
+        <?php
+        if (isset($_GET["product"]) || !empty($search))
+            echo "<input type='text' size='75%' style='height: 30px; width:75%; float:left; margin-top:35px' placeholder='Search' name='search'><input type='submit' hidden /> <br> <br> <br>";
+        if (isset($_GET["price"]) || !empty($price_search))
+            echo "<input type='text' size='50%' style='height: 30px; width:50%; float:left; margin-top:35px' placeholder='Price Search' name='price_search'><input type='submit' hidden /> <br> <br> <br>";
+        ?>
     </form>
     </p>
     <br> <br>
-    <?php if(!empty($search)) echo"<p class='login'>Kết quả tìm kiếm cho: $search</p>" ?>
-    <?php if(!empty($price_search)) echo"<p class='login'>Với giá dưới: $price_search</p>" ?>  <br> <br>
+    <?php if (!empty($search)) echo "<p class='login'>Kết quả tìm kiếm cho: $search</p>" ?>
+    <?php if (!empty($price_search)) echo "<p class='login'>Sản phẩm có giá dưới: $price_search</p>" ?> <br> <br>
     <span class="header1">
         <span class="searchbox">
             <?php
@@ -360,8 +373,8 @@ $price_search = $_GET["price_search"];
             $result = mysqli_query($conn, $query);
             $price_result = mysqli_query($conn, $price_querry);
             if ($result->num_rows > 0 && empty("$price_search")) {
-                while ($row = $result->fetch_assoc()) echo
-                "<div class='searchlist'> 
+                while ($row = $result->fetch_assoc())
+                    echo "<div class='searchlist'> 
                         <img width='200' height='200' src='$row[image_url]'><br>
                         <span class='searchname'> $row[name] </span><br>
                         <span class='searchname'> $row[price] </span><br>
@@ -376,8 +389,8 @@ $price_search = $_GET["price_search"];
                     ";
             } else if (empty("$price_search")) echo "";
             if ($price_result->num_rows > 0 && $price_search > 0 && !empty("$price_search")) {
-                while ($price_row = $price_result->fetch_assoc()) echo
-                "<div class='searchlist'> 
+                while ($price_row = $price_result->fetch_assoc())
+                    echo "<div class='searchlist'> 
                         <img width='200' height='200' src='$price_row[image_url]'><br>
                         <span class='searchname'> $price_row[name] </span><br>
                         <span class='searchname'> $price_row[price] </span><br>
