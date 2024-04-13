@@ -347,7 +347,8 @@ $price_search = $_GET["price_search"];
     </form>
     </p>
     <br> <br>
-    <p class="login">Kết quả tìm kiếm cho: <?php echo "$search" . "$price_search" ?></p>
+    <p class="login">Kết quả tìm kiếm cho: <?php echo "$search"?></p>
+    <?php if(!empty($price_search)) echo"<p class='login'>Với giá dưới: $price_search</p>" ?>
     <span class="header1">
         <span class="searchbox">
             <?php
