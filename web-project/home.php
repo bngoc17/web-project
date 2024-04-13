@@ -12,11 +12,10 @@ require "php/test.php";
     <link rel="stylesheet" href="css\font.css">
     <link rel="stylesheet" href="css\navbar.css">
     <link rel="stylesheet" href="css\login.css">
-    <script src="js\login.js"></script>
-    <script src="js\search.js"></script>
+    <script src="js\popup.js"></script>
 </head>
 
-<body>
+<body style="overflow-x: hidden; max-width:100%">
     <div>
         <img src="https://cdn-icons-png.flaticon.com/128/3917/3917559.png" alt="" style="width: 35px; height: 35px; position: absolute;">
         <span class="login-button" onclick="login()"><button id="button-user">Tài Khoản</button></span>
@@ -336,15 +335,16 @@ require "php/test.php";
         </span>
         <span class="navbar-a">
             <img src="https://cdn-icons-png.flaticon.com/128/3917/3917132.png" width="15px" height="15px" style="border-radius: 0%; padding-right: 10px; padding-top: 2px;" class="searchbar" onclick="search()">
-            <div id="searchbar" style="display: none;">
-                <form action="php\search.php" method="get">
-                    <input type="text" style="position: absolute; margin-left:-700px" size="100" name="search"><input type="submit" hidden />
-                </form>
-            </div>
         </span>
         <span class="navbar-a"><img src="https://cdn-icons-png.flaticon.com/128/3916/3916630.png" width="15px" height="15px" style="border-radius: 0%; padding-left: 10px; padding-top: 2px;"></span>
     </div>
     <span class="navbar-a"><img src="KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
+    <div id="searchbar" style="display: none;">
+        <form action="php\search.php" method="get">
+            <span style="margin-left:50%; position:absolute"><input type="text" style="position: absolute" size="50" name="search"><input type="submit" hidden /></span> <br> <br>
+            <span style="margin-left:50%; position:absolute"><input type="text" style="position: absolute" size="30" name="price_search"><input type="submit" hidden /></span>
+        </form>
+    </div>
     <div class="smoltitle">
         <div class="title">
             <span class="hr"><b>Cửa Hàng.</b><b style="color: gray;">Cách tốt nhất để mua sản phẩm bạn thích.</b></span>
