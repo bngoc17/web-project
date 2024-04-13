@@ -339,10 +339,10 @@ require "php/test.php";
         <span class="navbar-a"><img src="https://cdn-icons-png.flaticon.com/128/3916/3916630.png" width="15px" height="15px" style="border-radius: 0%; padding-left: 10px; padding-top: 2px;"></span>
     </div>
     <span class="navbar-a"><img src="KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
-    <div id="searchbar" style="display: none;">
+    <div id="searchbar" style="display: none;"  style="left:700px;">
         <form action="php\search.php" method="get">
-            <span style="margin-left:50%; position:absolute"><input type="text" style="position: absolute" size="50" name="search"><input type="submit" hidden /></span> <br> <br>
-            <span style="margin-left:50%; position:absolute"><input type="text" style="position: absolute" size="30" name="price_search"><input type="submit" hidden /></span>
+            <p><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></p>
+            <p><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá</button></p>
         </form>
     </div>
     <div class="smoltitle">
