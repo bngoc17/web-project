@@ -345,9 +345,9 @@ if (isset($_SESSION["usr-login"])) $usr = $_SESSION["usr-login"];
     </div>
     <span class="navbar-a"><img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
     <div id="searchbar" style="display: none;">
-        <form action="php\search.php" method="get">
-            <span style="margin-left:50%; position:absolute"><input type="text" style="position: absolute" size="50" name="search"><input type="submit" hidden /></span> <br> <br>
-            <span style="margin-left:50%; position:absolute"><input type="text" style="position: absolute" size="30" name="price_search"><input type="submit" hidden /></span>
+        <form action="search.php" method="get">
+            <p><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></p>
+            <p><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá</button></p>
         </form>
     </div>
     <div class="smoltitle">
