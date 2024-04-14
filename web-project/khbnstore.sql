@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2024 at 11:52 AM
+-- Generation Time: Apr 14, 2024 at 07:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -34,6 +34,22 @@ CREATE TABLE `accessories` (
   `price` decimal(10,2) NOT NULL,
   `image_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `accessories`
+--
+
+INSERT INTO `accessories` (`ID`, `name`, `description`, `price`, `image_url`) VALUES
+(1, 'Tai nghe Bluetooth', 'Tai nghe Bluetooth không dây chất lượng cao', 39.99, 'https://example.com/tai-nghe-bluetooth.jpg'),
+(2, 'Balo thời trang', 'Balo thời trang phong cách trẻ trung', 29.99, 'https://example.com/balo-thoi-trang.jpg'),
+(3, 'Chuột không dây', 'Chuột không dây tiện lợi cho làm việc và giải trí', 19.99, 'https://example.com/chuot-khong-day.jpg'),
+(4, 'Thẻ nhớ 64GB', 'Thẻ nhớ 64GB Class 10 cho lưu trữ dữ liệu nhanh chóng', 14.99, 'https://example.com/the-nho-64gb.jpg'),
+(5, 'Ổ cứng di động 1TB', 'Ổ cứng di động 1TB dễ dàng mang theo mọi nơi', 79.99, 'https://example.com/o-cung-di-dong-1tb.jpg'),
+(6, 'Bàn phím cơ', 'Bàn phím cơ chất lượng cao với đèn LED đa màu', 49.99, 'https://example.com/ban-phim-co.jpg'),
+(7, 'Miếng lót chuột gaming', 'Miếng lót chuột gaming chống trơn trượt', 9.99, 'https://example.com/mieng-lot-chuot-gaming.jpg'),
+(8, 'Thiết bị chuyển đổi USB-C sang HDMI', 'Thiết bị chuyển đổi USB-C sang HDMI cho việc kết nối màn hình', 24.99, 'https://example.com/chuyen-doi-usb-c-hdmi.jpg'),
+(9, 'Gậy tự sướng thông minh', 'Gậy tự sướng thông minh có chân đế chống rung', 12.99, 'https://example.com/gay-tu-suong.jpg'),
+(10, 'Máy in phun màu', 'Máy in phun màu đa năng cho công việc và học tập', 89.99, 'https://example.com/may-in-phun-mau.jpg');
 
 -- --------------------------------------------------------
 
@@ -71,8 +87,9 @@ INSERT INTO `products` (`ID`, `name`, `category_id`, `price`, `description`, `im
 (2, 'iphone 6', 1, 1500.00, 'just an iphone 6', 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg'),
 (3, 'ipad pro', 2, 2000.00, 'an ipad pro', 'https://cdn0.vox-cdn.com/hermano/verge/product/image/9587/vpavic_210512_4592_0195.jpg'),
 (4, 'mac pro', 3, 4500.00, 'a mac', 'https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-M2-Pro-and-M2-Max-hero-230117_Full-Bleed-Image.jpg.large.jpg'),
-(6, 'iphone 7', 1, 500.00, 'iphone?', ''),
-(7, 'iphone 7', 1, 500.00, 'iphone?', '');
+(6, 'iphone 7', 1, 500.00, 'iphone?', 'https://cdn.mos.cms.futurecdn.net/258a076ba6f903e9969ed8f882d9c1f4-768-80.jpg.webp'),
+(7, 'iphone 8', 1, 500.00, 'iphone?', 'https://cdn.mos.cms.futurecdn.net/6Q8eHN6YoNZUPRAjp6zF4T-1024-80.jpg.webp'),
+(8, 'iphone 12', 1, 1500.00, 'iphone mới về, giá mềm', 'https://cafefcdn.com/203337114487263232/2023/12/22/img-195011zon-1703246141596-17032461427531047893721.png');
 
 -- --------------------------------------------------------
 
@@ -157,7 +174,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accessories`
 --
 ALTER TABLE `accessories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `admins`
@@ -169,7 +186,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
