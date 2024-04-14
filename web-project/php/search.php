@@ -368,8 +368,8 @@ session_start();
             $search = trim($search);
             $price_search = trim($price_search);
             $mul_search = str_replace(" ", "%' OR name LIKE '%", $search);
-            $query = "SELECT * FROM products WHERE name LIKE '%$mul_search%'";
-            $price_querry = "SELECT * FROM products WHERE price <= '$price_search'";
+            $query = "SELECT * FROM products WHERE name LIKE '%$mul_search%' ORDER BY name";
+            $price_querry = "SELECT * FROM products WHERE price <= '$price_search' ORDER BY price";
             $result = mysqli_query($conn, $query);
             $price_result = mysqli_query($conn, $price_querry);
             if ($result->num_rows > 0 && empty("$price_search")) {
@@ -405,8 +405,8 @@ session_start();
                     ";
             } else if (empty("$search")) echo "";
             $mul_search = str_replace(" ", "%' OR name LIKE '%", $search);
-            $query = "SELECT * FROM accessories WHERE name LIKE '%$mul_search%'";
-            $price_querry = "SELECT * FROM accessories WHERE price <= '$price_search'";
+            $query = "SELECT * FROM accessories WHERE name LIKE '%$mul_search%' ORDER BY name";
+            $price_querry = "SELECT * FROM accessories WHERE price <= '$price_search' ORDER BY price";
             $result = mysqli_query($conn, $query);
             $price_result = mysqli_query($conn, $price_querry);
             if ($result->num_rows > 0 && empty("$price_search")) {
