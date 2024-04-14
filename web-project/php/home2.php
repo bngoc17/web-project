@@ -346,8 +346,12 @@ if (isset($_SESSION["usr-login"])) $usr = $_SESSION["usr-login"];
     <span class="navbar-a"><img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
     <div id="searchbar" style="display: none;">
         <form action="search.php" method="get">
-            <p><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></p>
-            <p><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá</button></p>
+            <span><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></span>
+            <span><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá sản phẩm</button></span>
+        </form>
+        <form action="search_accessory.php" method="get">
+            <span><button name="accessory" type="submit" style="position: relative; left:870px">Tìm theo phụ kiện</button></span>
+            <span><button name="price_accessory" type="submit" style="position: relative; left:870px">Tìm theo giá phụ kiện</button></span>
         </form>
     </div>
     <div class="smoltitle">
