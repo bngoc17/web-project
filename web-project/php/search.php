@@ -345,8 +345,12 @@ session_start();
     <span class="navbar-a"><img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
     <div id="searchbar" style="display: none;" style="left:700px;">
         <form action="search.php" method="get">
-            <p><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></p>
-            <p><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá</button></p>
+            <span><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></span>
+            <span><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá sản phẩm</button></span>
+        </form>
+        <form action="search_accessory.php" method="get">
+            <span><button name="accessory" type="submit" style="position: relative; left:870px">Tìm theo phụ kiện</button></span>
+            <span><button name="price_accessory" type="submit" style="position: relative; left:870px">Tìm theo giá phụ kiện</button></span>
         </form>
     </div>
     <p>
@@ -370,43 +374,6 @@ session_start();
             $mul_search = str_replace(" ", "%' OR name LIKE '%", $search);
             $query = "SELECT * FROM products WHERE name LIKE '%$mul_search%' ORDER BY name";
             $price_querry = "SELECT * FROM products WHERE price <= '$price_search' ORDER BY price";
-            $result = mysqli_query($conn, $query);
-            $price_result = mysqli_query($conn, $price_querry);
-            if ($result->num_rows > 0 && empty("$price_search")) {
-                while ($row = $result->fetch_assoc())
-                    echo "<div class='searchlist'> 
-                        <img width='200' height='200' src='$row[image_url]'><br>
-                        <span class='searchname'> $row[name] </span><br>
-                        <span class='searchname'> $row[price] </span><br>
-                        <span class='searchname'> 
-                            <div class = 'searchdropdown'>description 
-                                <div class = 'searchdropdown-content'>
-                                    $row[description]
-                                </div>
-                            </div>
-                        </span>
-                    </div>
-                    ";
-            } else if (empty("$price_search")) echo "";
-            if ($price_result->num_rows > 0 && $price_search > 0 && !empty("$price_search")) {
-                while ($price_row = $price_result->fetch_assoc())
-                    echo "<div class='searchlist'> 
-                        <img width='200' height='200' src='$price_row[image_url]'><br>
-                        <span class='searchname'> $price_row[name] </span><br>
-                        <span class='searchname'> $price_row[price] </span><br>
-                        <span class='searchname'> 
-                            <div class = 'searchdropdown'>description 
-                                <div class = 'searchdropdown-content'>
-                                    $price_row[description]
-                                </div>
-                            </div>
-                        </span>
-                    </div>
-                    ";
-            } else if (empty("$search")) echo "";
-            $mul_search = str_replace(" ", "%' OR name LIKE '%", $search);
-            $query = "SELECT * FROM accessories WHERE name LIKE '%$mul_search%' ORDER BY name";
-            $price_querry = "SELECT * FROM accessories WHERE price <= '$price_search' ORDER BY price";
             $result = mysqli_query($conn, $query);
             $price_result = mysqli_query($conn, $price_querry);
             if ($result->num_rows > 0 && empty("$price_search")) {
