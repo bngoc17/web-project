@@ -12,17 +12,18 @@ if (isset($_SESSION["usr-login"])) $usr = $_SESSION["usr-login"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home2</title>
     <link rel="stylesheet" href="..\css\box.css">
-    <link rel="stylesheet" href="..\css\font.css">
-    <link rel="stylesheet" href="..\css\navbar.css">
+    <link rel="stylesheet" id="font" href="..\css\font.css">
+    <link rel="stylesheet" id="navbar" href="..\css\navbar.css">
     <link rel="stylesheet" href="..\css\login.css">
     <script src="..\js\popup.js"></script>
+    <script src="..\js\MODE_login.js"></script>
 </head>
 
 <body style="z-index: -1;">
     <div>
         <img src="https://cdn-icons-png.flaticon.com/128/3917/3917559.png" alt="" style="width: 35px; height: 35px; position: absolute;">
         <span class="login-button" onclick="login()">
-            <button class="button-user">
+            <button class="button-user" style="position: relative;">
                 <?php echo "$usr"; ?>
             </button>
         </span>
@@ -344,6 +345,7 @@ if (isset($_SESSION["usr-login"])) $usr = $_SESSION["usr-login"];
         <span class="navbar-a"><img src="https://cdn-icons-png.flaticon.com/128/3916/3916630.png" width="15px" height="15px" style="border-radius: 0%; padding-left: 10px; padding-top: 2px;"></span>
     </div>
     <span class="navbar-a"><img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
+    <span class="login-button"><button id="btn-toggle" class="button-user" style="margin-top:30px" onclick="chuyen();">CHANGE MODE</button></span>
     <div id="searchbar" style="display: none;">
         <form action="search.php" method="get">
             <span><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></span>

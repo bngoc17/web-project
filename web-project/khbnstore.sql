@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2024 at 07:40 AM
+-- Generation Time: Apr 15, 2024 at 09:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -63,6 +63,14 @@ CREATE TABLE `admins` (
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`ID`, `username`, `password`) VALUES
+(1, 'bn', 'bn'),
+(2, 'kh', 'kh');
+
 -- --------------------------------------------------------
 
 --
@@ -83,13 +91,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ID`, `name`, `category_id`, `price`, `description`, `image_url`) VALUES
-(1, 'iphone 15', 1, 3000.00, 'iphone but expensive', 'https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/article/Apple-iPhone-15-lineup-hero-230912_inline.jpg.large.jpg'),
-(2, 'iphone 6', 1, 1500.00, 'just an iphone 6', 'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-6-1.jpg'),
 (3, 'ipad pro', 2, 2000.00, 'an ipad pro', 'https://cdn0.vox-cdn.com/hermano/verge/product/image/9587/vpavic_210512_4592_0195.jpg'),
 (4, 'mac pro', 3, 4500.00, 'a mac', 'https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Pro-M2-Pro-and-M2-Max-hero-230117_Full-Bleed-Image.jpg.large.jpg'),
 (6, 'iphone 7', 1, 500.00, 'iphone?', 'https://cdn.mos.cms.futurecdn.net/258a076ba6f903e9969ed8f882d9c1f4-768-80.jpg.webp'),
 (7, 'iphone 8', 1, 500.00, 'iphone?', 'https://cdn.mos.cms.futurecdn.net/6Q8eHN6YoNZUPRAjp6zF4T-1024-80.jpg.webp'),
-(8, 'iphone 12', 1, 1500.00, 'iphone mới về, giá mềm', 'https://cafefcdn.com/203337114487263232/2023/12/22/img-195011zon-1703246141596-17032461427531047893721.png');
+(8, 'iphone 12', 1, 1500.00, 'iphone mới về, giá mềm', 'https://cafefcdn.com/203337114487263232/2023/12/22/img-195011zon-1703246141596-17032461427531047893721.png'),
+(31, 'iphone 9', 1, 1700.00, '', '');
 
 -- --------------------------------------------------------
 
@@ -111,7 +118,8 @@ INSERT INTO `product_categories` (`ID`, `name`) VALUES
 (2, 'ipad'),
 (3, 'mac'),
 (4, 'watch'),
-(5, 'tv');
+(5, 'tv'),
+(6, 'airpod');
 
 -- --------------------------------------------------------
 
@@ -180,19 +188,13 @@ ALTER TABLE `accessories`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `product_categories`
---
-ALTER TABLE `product_categories`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables

@@ -19,11 +19,11 @@
     border: 2px solid black;
     background-color: white;
     border-radius: 15px;
-    display: none;
+    display: block;
 }
 
 #box {
-    display: none;
+    display: block;
 }
 .add-button {
     position: absolute;

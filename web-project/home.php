@@ -1,5 +1,5 @@
 <?php
-require "test.php";
+require "php/test.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,24 +8,24 @@ require "test.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cửa hàng</title>
-    <link rel="stylesheet" href="..\css\box.css">
-    <link rel="stylesheet" href="..\css\font.css">
-    <link rel="stylesheet" href="..\css\navbar.css">
-    <link rel="stylesheet" href="..\css\login.css">
-    <script src="..\js\login.js"></script>
-    <script src="..\js\search.js"></script>
+    <link rel="stylesheet" href="css\box.css">
+    <link rel="stylesheet" id="font" href="css\font.css">
+    <link rel="stylesheet" id="navbar" href="css\navbar.css">
+    <link rel="stylesheet" href="css\login.css">
+    <script src="js\popup.js"></script>
+    <script src="js\MODE.js"></script>
 </head>
 
 <body>
     <div>
         <img src="https://cdn-icons-png.flaticon.com/128/3917/3917559.png" alt="" style="width: 35px; height: 35px; position: absolute;">
-        <span class="login-button" onclick="login()"><button id="button-user">Tài Khoản</button></span>
+        <span class="login-button" onclick="login()"><button id="button-user" style="position: relative;">Tài Khoản</button></span>
         <div id="panel" style="height: 250px;">
             <button class="button-user" style="float: right; margin-top:5px;" onclick="login()">Đóng x</button>
             <p class="header">Đăng nhập</p> <br>
-            <form action="signup.php"><button class="button-user" style="margin-left: 100px;">Đăng Ký</button></form>
-            <form action="login.php"><button class="button-user" style="margin-left: 100px;">Đăng Nhập</button></form>
-            <form action="AdminLogin.php"><button class="button-user" style="margin-left: 100px;">Đăng Nhập ADmin</button></form>
+            <form action="php\signup.php"><button class="button-user" style="margin-left: 100px;">Đăng Ký</button></form>
+            <form action="php\login.php"><button class="button-user" style="margin-left: 100px;">Đăng Nhập</button></form> <br> <br>
+            <form action="php\AdminLogin.php"><button class="button-user" style="margin-left: 100px; position:relative">Đăng Nhập ADmin</button></form>
         </div>
     </div>
     <div class="navbar">
@@ -337,15 +337,21 @@ require "test.php";
         </span>
         <span class="navbar-a">
             <img src="https://cdn-icons-png.flaticon.com/128/3917/3917132.png" width="15px" height="15px" style="border-radius: 0%; padding-right: 10px; padding-top: 2px;" class="searchbar" onclick="search()">
-            <div id="searchbar" style="display: none;">
-                <form action="search.php" method="get">
-                    <input type="text" style="position: absolute; margin-left:-700px" size="50" name="search"><input type="submit" hidden />
-                </form>
-            </div>
         </span>
         <span class="navbar-a"><img src="https://cdn-icons-png.flaticon.com/128/3916/3916630.png" width="15px" height="15px" style="border-radius: 0%; padding-left: 10px; padding-top: 2px;"></span>
     </div>
-    <span class="navbar-a"><img src="..\KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
+    <span class="navbar-a"><img src="KieuHoa & BaoNgoc_transparent.png" alt="" width="200" height="200" style="position: absolute; margin-left: 85%; top: -5px;"></span>
+    <span class="login-button"><button id="btn-toggle" class="button-user" style="margin-top:30px" onclick="chuyen();">CHANGE MODE</button></span>
+    <div id="searchbar" style="display: none;"  style="left:700px;">
+        <form action="php\search.php" method="get">
+            <span><button name="product" type="submit" style="position: relative; left:850px">Tìm theo tên sản phẩm</button></span>
+            <span><button name="price" type="submit" style="position: relative; left:850px">Tìm theo giá sản phẩm</button></span>
+        </form>
+        <form action="php\search_accessory.php" method="get">
+            <span><button name="accessory" type="submit" style="position: relative; left:870px">Tìm theo phụ kiện</button></span>
+            <span><button name="price_accessory" type="submit" style="position: relative; left:870px">Tìm theo giá phụ kiện</button></span>
+        </form>
+    </div>
     <div class="smoltitle">
         <div class="title">
             <span class="hr"><b>Cửa Hàng.</b><b style="color: gray;">Cách tốt nhất để mua sản phẩm bạn thích.</b></span>
