@@ -19,11 +19,11 @@ if (isset($_POST["signup"])) {
             $querry = mysqli_query($conn, $insert);
             while ($result = $check->fetch_assoc()) {
                 if ($result['username'] == $usr) {
-                    $err = "Đã có tài khoản!";
+                    $err = "Đã có tài khoản!"; $ok = "";
                     break;
                 }
                 if ($result['username'] != $usr && $result['password'] != $psw) {
-                    $ok = "check";
+                    $ok = "check"; $err = "";
                 }
             }
         }

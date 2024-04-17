@@ -46,9 +46,11 @@ if (isset($_POST["category"])) {
     <title>Add</title>
     <link rel="stylesheet" href="..\css\font.css">
     <link rel="stylesheet" href="..\css\add.css">
+    <link rel="stylesheet" href="..\css\login.css">
 </head>
 
 <body>
+    <form action='AdminUI.php'><button class='button-user'>Trang Chủ</button></form> <br> <br>
     <div id="box" style="width: 500px; display: block;">
         <form action="add_category.php" method="post">
             <span class="header1">Thêm loại sản phẩm</span> <br>
