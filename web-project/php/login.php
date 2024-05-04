@@ -46,7 +46,7 @@ $_SESSION["psw-login"] = $psw;
 
 <body>
     <span class="login-button">
-        <form action="home.php"><button id="button-user">Trang chủ</button>
+        <form action="..\home.php"><button id="button-user">Trang chủ</button>
     </span></form>
     <div id="panel" style="display:block; height:340px">
         <form action="login.php" method="post">

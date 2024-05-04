@@ -14,16 +14,21 @@ if (isset($_POST["signup"])) {
         $err = "Thiếu password";
     } else {
         $select = "SELECT * FROM users";
-        if ($check = mysqli_query($conn, $select)) {
+        $result = mysqli_query($conn, $select);
+        if($result->num_rows === 0) {
             $insert = "INSERT INTO users (username, password) VALUES('$usr', '$psw')";
-            $querry = mysqli_query($conn, $insert);
-            while ($result = $check->fetch_assoc()) {
-                if ($result['username'] == $usr) {
+            if($result = mysqli_query($conn, $insert)) $ok = "check";
+        }
+        if (($result->num_rows > 0)) {
+            while ($row = $result->fetch_assoc()) {
+                if ($row['username'] == $usr) {
                     $err = "Đã có tài khoản!"; $ok = "";
                     break;
                 }
-                if ($result['username'] != $usr && $result['password'] != $psw) {
+                if ($row['username'] != $usr && $row['password'] != $psw) {
                     $ok = "check"; $err = "";
+                    $insert = "INSERT INTO users (username, password) VALUES('$usr', '$psw')";
+                    $querry = mysqli_query($conn, $insert);
                 }
             }
         }
@@ -45,7 +50,7 @@ $_SESSION["psw-signup"] = $psw;
 
 <body>
     <span class="login-button">
-        <form action="home.php"><button id="button-user">Trang chủ</button>
+        <form action="..\home.php"><button id="button-user">Trang chủ</button>
     </span></form>
     <div id="panel" style="display:block; height:340px">
         <form action="signup.php" method="post">

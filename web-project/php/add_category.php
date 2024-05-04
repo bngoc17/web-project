@@ -17,9 +17,11 @@ if (isset($_POST["category"])) {
     } else {
         $category_querry = "SELECT * FROM product_categories";
         $category_result = mysqli_query($conn, $category_querry);
-        if ($category_result->num_rows > 0) {
+        if($category_result->num_rows === 0) {
             $category_insert = "INSERT INTO product_categories VALUES($category_id, '$category_name')";
-            $category_insert_result = mysqli_query($conn, $category_insert);
+            if($insert_result = mysqli_query($conn, $category_insert)) $ok = "check";
+        }
+        if ($category_result->num_rows > 0) { 
             while ($category_row = $category_result->fetch_assoc()) {
                 if ($category_row['name'] == $category_name) {
                     $err = "Đã có tên loại sản phẩm!";
@@ -30,6 +32,8 @@ if (isset($_POST["category"])) {
                     break;
                 }
                 if ($category_row['name'] != $category_name && $category_row['ID'] != $category_id) {
+                    $category_insert = "INSERT INTO product_categories VALUES($category_id, '$category_name')";
+                    $category_insert_result = mysqli_query($conn, $category_insert);    
                     $ok = "Đã thêm loại sản phẩm";
                 }
             }
