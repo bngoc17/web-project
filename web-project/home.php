@@ -19,7 +19,7 @@ require "php/test.php";
 <body>
     <div>
         <img src="https://cdn-icons-png.flaticon.com/128/3917/3917559.png" alt="" style="width: 35px; height: 35px; position: absolute;">
-        <span class="login-button" onclick="login()"><button class="button-user" style="position: relative;">Tài Khoản</button></span>
+        <span class="login-button" onclick="login()"><button id="button-user" style="position: relative;">Tài Khoản</button></span>
         <div id="panel" style="height: 250px;">
             <button class="button-user" style="float: right; margin-top:5px; margin-right:5px" onclick="login()">Đóng x</button>
             <p class="header">Đăng nhập</p> <br>
