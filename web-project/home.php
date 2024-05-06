@@ -11,7 +11,7 @@ require "php/test.php";
     <link rel="stylesheet" href="css\box.css">
     <link rel="stylesheet" id="font" href="css\font.css">
     <link rel="stylesheet" id="navbar" href="css\navbar.css">
-    <link rel="stylesheet" href="css\login.css">
+    <link rel="stylesheet" href="css\login1.css">
     <script src="js\popup.js"></script>
     <script src="js\MODE.js"></script>
 </head>
@@ -19,13 +19,13 @@ require "php/test.php";
 <body>
     <div>
         <img src="https://cdn-icons-png.flaticon.com/128/3917/3917559.png" alt="" style="width: 35px; height: 35px; position: absolute;">
-        <span class="login-button" onclick="login()"><button id="button-user" style="position: relative;">Tài Khoản</button></span>
+        <span class="login-button" onclick="login()"><button class="button-user" style="position: relative;">Tài Khoản</button></span>
         <div id="panel" style="height: 250px;">
-            <button class="button-user" style="float: right; margin-top:5px;" onclick="login()">Đóng x</button>
+            <button class="button-user" style="float: right; margin-top:5px; margin-right:5px" onclick="login()">Đóng x</button>
             <p class="header">Đăng nhập</p> <br>
-            <form action="php\signup.php"><button class="button-user" style="margin-left: 100px;">Đăng Ký</button></form>
-            <form action="php\login.php"><button class="button-user" style="margin-left: 100px;">Đăng Nhập</button></form> <br> <br>
-            <form action="php\AdminLogin.php"><button class="button-user" style="margin-left: 100px; position:relative">Đăng Nhập ADmin</button></form>
+            <form action="php\signup.php"><button class="button-user" style="margin-left: 120px;">Đăng Ký</button></form>
+            <form action="php\login.php"><button class="button-user" style="margin-left: 120px;">Đăng Nhập</button></form> <br> <br>
+            <form action="php\AdminLogin.php"><button class="button-user" style="margin-left: 180px; position:relative">Đăng Nhập ADmin</button></form>
         </div>
     </div>
     <div class="navbar">

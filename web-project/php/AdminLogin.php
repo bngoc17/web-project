@@ -29,15 +29,20 @@ if (isset($_POST["ADsub"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin login</title>
+    <link rel="stylesheet" href="..\css\font.css">
+    <link rel="stylesheet" href="..\css\login1.css">
 </head>
 
 <body>
-    <div>
-        <h3>ĐĂNG NHẬP ADMIN</h3>
+    <span class="login-button">
+        <form action="..\home.php"><button id="button-user">Trang chủ</button>
+    </span></form>
+    <div id="panel" style="display:block; height:340px">
+        <span class="header">ĐĂNG NHẬP ADMIN<span></span>
         <form action="AdminLogin.php" method="POST">
-            tên của bạn <input type="text" name="tenAD"> <br>
-            mật khẩu của bạn <input type="text" name="mkAD"> <br>
-            <input type="submit" value="đăng nhập" name="ADsub">
+        <p class="login">tên của bạn <input type="text" name="tenAD"></p>
+        <p class="login">mật khẩu của bạn <input type="text" name="mkAD"></p>
+            <input type="submit" class="button-user" style="margin-left: 210px;" value="đăng nhập" name="ADsub">
         </form>
     </div>
 </body>

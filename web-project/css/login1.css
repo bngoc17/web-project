@@ -1,0 +1,83 @@
+#panel,
+.panel {
+    position: absolute;
+    font-family: Cambria;
+    z-index: 1;
+    top: 25%;
+    left: 30%;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    background-color: white;
+    display: none;
+}
+
+#panel {
+    display: none;
+    font-family: Cambria;
+    float: left;
+    position: fixed;
+    text-align: center;
+    width: 550px;
+    height: 150px;
+}
+#panel1,
+.panel1 {
+    position: absolute;
+    font-family: Cambria;
+    z-index: 1;
+    top: 25%;
+    left: 20%;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    background-color: white;
+    display: none;
+}
+
+#panel1 {
+    display: none;
+    font-family: Cambria;
+    float: left;
+    position: fixed;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+}
+
+.login-button {
+    position: absolute;
+    left: 45px;
+    top: 10px;
+    font-size: 13px;
+    font-family: Cambria;
+}
+
+.login {
+    font-size: 30px;
+    text-align: center;
+    top: 25%;
+    left: 65%;
+    z-index: 1;
+}
+
+.button {
+    font-size: 30px;
+    float: left;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 18%;
+    height: 20%;
+    z-index: 1;
+}
+#button-user,
+.button-user {
+    font-size: 20px;
+    float: left;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: -5px;
+    z-index: 1;
+}
+
+#button-user {
+    display: block;
+}

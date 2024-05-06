@@ -13,8 +13,8 @@ include_once "test.php";
     <link rel="stylesheet" href="..\css\box.css">
     <link rel="stylesheet" href="..\css\font.css">
     <link rel="stylesheet" href="..\css\navbar.css">
-    <link rel="stylesheet" href="..\css\login.css">
-    <link rel="stylesheet" href="..\css\add.css">
+    <link rel="stylesheet" href="..\css\login1.css">
+    <link rel="stylesheet" href="..\css\add1.css">
     <script src="..\js\popup.js"></script>
     <script src="..\js\hello.js"></script>
 </head>
@@ -30,7 +30,7 @@ include_once "test.php";
         <div id="panel" style="height: 250px;">
             <button class="button-user" style="float: right; margin-top:5px" onclick="login()">Đóng x</button>
             <p class="header">Hello <?php echo "$usr" ?></p> <br>
-            <form action="logout.php" method="post"><input type="submit" name="logout" value="Đăng Xuất"></form>
+            <form action="logout.php" method="post"><input type="submit" class="button-user" style="margin-left: 210px;" name="logout" value="Đăng Xuất"></form>
         </div>
     </div>
     </div>
@@ -42,8 +42,8 @@ include_once "test.php";
         <div id="banthemsanpham" style="display: none;">
             <div>
                 <br> <br>
-            <form action="add_product.php" method="post"><button>THÊM SẢN PHẨM</form></button> <br>
-            <form action="add_category.php" method="post"><button>THÊM LOẠI SẢN PHẨM</form></button>
+            <form action="add_product.php" method="post"><button class="button-user">THÊM SẢN PHẨM</form></button> <br> <br>
+            <form action="add_category.php" method="post"><button class="button-user">THÊM LOẠI SẢN PHẨM</form></button>
             </div>
         </div>
     </div>

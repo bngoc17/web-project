@@ -49,19 +49,19 @@ if (isset($_POST["category"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add</title>
     <link rel="stylesheet" href="..\css\font.css">
-    <link rel="stylesheet" href="..\css\add.css">
-    <link rel="stylesheet" href="..\css\login.css">
+    <link rel="stylesheet" href="..\css\add1.css">
+    <link rel="stylesheet" href="..\css\login1.css">
 </head>
 
 <body>
     <form action='AdminUI.php'><button class='button-user'>Trang Chủ</button></form> <br> <br>
     <div id="box" style="width: 500px; display: block;">
         <form action="add_category.php" method="post">
-            <span class="header1">Thêm loại sản phẩm</span> <br>
+            <span class="header1" style="margin-left: 150px;">Thêm loại sản phẩm</span> <br>
             <span class="header2" style="color: red;"><?php echo "$err" ?></span> <br>
             <p class="add">Catetogy product id <input type="text" name="category_id"></p>
             <p class="add">Catetogy name <input type="text" name="category_name"></p> 
-            <span><input type="submit" value="Thêm loại sản phẩm" name="category"></span>
+            <span><input type="submit" class="button-user" style="margin-left: 150px;" value="Thêm loại sản phẩm" name="category"></span>
             <?php if(!empty($ok)) header('location:AdminUI.php')?>
         </form>
     </div>

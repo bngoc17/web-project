@@ -45,7 +45,7 @@ $_SESSION["psw-signup"] = $psw;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="..\css\font.css">
-    <link rel="stylesheet" href="..\css\login.css">
+    <link rel="stylesheet" href="..\css\login1.css">
 </head>
 
 <body>
@@ -58,7 +58,7 @@ $_SESSION["psw-signup"] = $psw;
             <span class="header2" style="color: red;"><?php echo "$err" ?></span> <br>
             <p class="login">Username <input type="text" name="usr"></p>
             <p class="login">Password <input type="text" name="psw"></p>
-            <p><input type="submit" value="Đăng kí" name="signup"></p>
+            <p><input type="submit" class="button-user" style="margin-left: 210px;" value="Đăng kí" name="signup"></p>
             <?php if (!empty($ok)) header('location:home2.php') ?>
         </form>
         <?php if ($err == "Đã có tài khoản!" && isset($_POST["signup"])) echo "<p><form action='login.php'><input type='submit' value='Đăng nhập' name='login'></p></form>" ?>

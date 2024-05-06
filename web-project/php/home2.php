@@ -14,7 +14,7 @@ if (isset($_SESSION["usr-login"])) $usr = $_SESSION["usr-login"];
     <link rel="stylesheet" href="..\css\box.css">
     <link rel="stylesheet" id="font" href="..\css\font.css">
     <link rel="stylesheet" id="navbar" href="..\css\navbar.css">
-    <link rel="stylesheet" href="..\css\login.css">
+    <link rel="stylesheet" href="..\css\login1.css">
     <script src="..\js\popup.js"></script>
     <script src="..\js\MODE_login.js"></script>
 </head>
@@ -30,7 +30,7 @@ if (isset($_SESSION["usr-login"])) $usr = $_SESSION["usr-login"];
         <div id="panel" style="height: 250px;">
             <button class="button-user" style="float: right; margin-top:5px" onclick="login()">Đóng x</button>
             <p class="header">Hello <?php echo "$usr" ?></p> <br>
-            <form action="logout.php" method="post"><input type="submit" name="logout" value="Đăng Xuất"></form>
+            <form action="logout.php" method="post"><input type="submit" class="button-user" style="margin-left: 210px;" name="logout" value="Đăng Xuất"></form>
         </div>
     </div>
     <div class="navbar">

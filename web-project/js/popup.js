@@ -1,12 +1,12 @@
 function login() {
-  var x = document.getElementById("panel");
+  var x = document.getElementsByClassName("panel");
   if (x.style.display === "none") x.style.display = "block"; else x.style.display = "none";
 }
 function logout() {
-  var x = document.getElementById("panel1");
+  var x = document.getElementsByClassName("panel1");
   if (x.style.display === "none") x.style.display = "block"; else x.style.display = "none";
 }
 function search() {
-  var x = document.getElementById("searchbar");
+  var x = document.getElementsByClassName("searchbar");
   if (x.style.display === "none") x.style.display = "block"; else x.style.display = "none";
 }

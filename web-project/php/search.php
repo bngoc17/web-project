@@ -14,12 +14,13 @@ session_start();
     <link rel="stylesheet" href="..\css\box.css">
     <link rel="stylesheet" href="..\css\font.css">
     <link rel="stylesheet" href="..\css\navbar.css">
-    <link rel="stylesheet" href="..\css\login.css">
+    <link rel="stylesheet" href="..\css\login1.css">
     <link rel="stylesheet" href="..\css\searchlist.css">
     <script src="..\js\popup.js"></script>
 </head>
 
 <body>
+
     <span class="login-button">
         <?php
         if (isset($_SESSION["usr-signup"]) || isset($_SESSION["usr-login"])) echo "
@@ -369,11 +370,23 @@ session_start();
     <span class="header1">
         <span class="searchbox">
             <?php
+            $results_per_page = 12;
+            $query = "SELECT * FROM products";
+            $result = mysqli_query($conn, $query);
+            $number_of_result = mysqli_num_rows($result);
+            $number_of_page = ceil($number_of_result / $results_per_page);
+            if (!isset($_GET["page"])) {
+                $page = 1;
+            } else {
+                $page = $_GET["page"];
+            }
+            $page_first_result = ($page - 1) * $results_per_page;
+
             $search = trim($search);
             $price_search = trim($price_search);
             $mul_search = str_replace(" ", "%' OR name LIKE '%", $search);
-            $query = "SELECT * FROM products WHERE name LIKE '%$mul_search%' ORDER BY name";
-            $price_querry = "SELECT * FROM products WHERE price <= '$price_search' ORDER BY price";
+            $query = "SELECT * FROM products WHERE name LIKE '%$mul_search%' ORDER BY name LIMIT " . $page_first_result . ", " . $results_per_page;
+            $price_querry = "SELECT * FROM products WHERE price <= '$price_search' ORDER BY price LIMIT " . $page_first_result . ", " . $results_per_page;
             $result = mysqli_query($conn, $query);
             $price_result = mysqli_query($conn, $price_querry);
             if ($result->num_rows > 0 && empty("$price_search")) {
@@ -410,6 +423,13 @@ session_start();
             } else if (empty("$search")) echo "";
             ?>
         </span>
+    </span>
+    <span style="float: left; position:fixed; top:150px">
+    <?php
+    for ($page = 1; $page <= $number_of_page; $page++) {
+        echo '<a href = "search.php?page=' . $page . '">' . $page . ' </a>' . '<br>';
+    }
+    ?>
     </span>
 </body>
 
